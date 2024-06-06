@@ -4,6 +4,7 @@ import { AppContext } from "../context/AppContext";
 import { baseUrl } from "../baseUrl";
 import Header from "../components/Header";
 import BlogDetails from "../components/BlogDetails";
+import Spinner from "../components/Spinner";
 
 function BlogPage(){
     const newBaseUrl = "https://codehelp-apis.vercel.app/api/";
@@ -39,10 +40,10 @@ function BlogPage(){
         }
     }, [location.pathname]);
     return(
-        <div>
+        <div className='py-24 max-w-2xl mx-auto'>
            <Header/>
-           <div>
-              <button
+           <div className='max-w-[720px] px-[25px] '>
+              <button className='mb-6 border-2 rounded-md border-[#dfdfdf] py-1 px-4 hover:bg-[#efefef] transition-all'
                onClick={() => navigation(-1)}
               >
                 Back
@@ -51,13 +52,15 @@ function BlogPage(){
            {
             loading ? 
             (<div>
-                <p>Loading...</p>
+                <div className="min-h-[80vh] w-full flex justify-center items-center">
+                   <p className="text-center font-bold text-3xl">No Blogs Found !</p>
+                </div>
              </div>   
             ) :
             blog ? 
-            (<div>
+            (<div className='flex flex-col gap-y-10'>
                <BlogDetails post={blog}/>
-               <h2>Related Blogs</h2>
+               <h2 className='text-3xl font-bold'>Related Blogs</h2>
                {
                 relatedBlogs.map( (post) => (
                     <div key={post.id}>

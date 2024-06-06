@@ -5,9 +5,9 @@ import Blogs from "../components/Blogs";
 
 function Home(){
     return(
-        <div>
+        <div className="py-24 px-[25px]">
           <Header/>
-          <div>
+          <div className=' mx-auto max-w-[720px]'>
             <Blogs/>
             <Pagination/>
           </div>

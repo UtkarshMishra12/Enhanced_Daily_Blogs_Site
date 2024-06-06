@@ -10,21 +10,22 @@ function TagPage(){
     const tag = location.pathname.split("/").at(-1);
 
     return(
-        <div>
-           <Header/>
-           <div>
-              <button
-               onClick={() => navigation(-1)}
-              >
-                Back
+      <div>
+      <Header/>
+      <div className='py-24 max-w-[720px] px-[25px] mx-auto'>
+          <div className='mb-8 flex items-center gap-3'>
+              <button className='border-2 rounded-md border-[#dfdfdf] py-1 px-4 hover:bg-[#efefef] transition-all'
+                  onClick={() => navigation(-1)}>
+                      Back
               </button>
-              <h2>
-                Blogs Tagged! <span>#{tag}</span>
+              <h2 className='font-bold'>
+                  Blogs Tagged <span className='text-blue-700'>#{tag}</span>
               </h2>
-           </div>
-           <Blogs/>
-           <Pagination/>
-        </div>
+          </div>
+          <Blogs/>
+      </div>
+      <Pagination/>
+  </div>
     )
 }
 

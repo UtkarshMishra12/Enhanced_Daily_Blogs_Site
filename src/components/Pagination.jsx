@@ -7,8 +7,8 @@ export default function Pagination() {
   if (!totalPages) return null;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 bg-white py-2 border-t-2 border-t-gray-300">
-      <div className="flex items-center gap-x-3 w-11/12 max-w-2xl mx-auto">
+    <div className="fixed bottom-0 inset-x-0 bg-[#6d44fc] text-white py-2.5 border-t-2 border-t-gray-300">
+      <div  className="flex items-center gap-x-3 w-11/12 max-w-2xl mx-auto">
         {page > 1 && (
           <button
             onClick={() => handlePageChange(page - 1)}

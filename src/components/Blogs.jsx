@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import BlogDetails from "./BlogDetails";
+import Spinner from "./Spinner"
 
 export default function Blogs() {
   const { posts, loading } = useContext(AppContext);
 
   return (
-    <div className="flex flex-col gap-y-10 mt-20 mb-20">
+    <div className="flex flex-col gap-y-10 max-w-2xl mx-auto ">
       {loading ? (
         <div className="min-h-[80vh] w-full flex justify-center items-center">
-          <p className="text-center font-bold text-3xl">Loading</p>
+          <Spinner/>
         </div>
       ) : posts.length === 0 ? (
         <div className="min-h-[80vh] w-full flex justify-center items-center">
